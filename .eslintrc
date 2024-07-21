@@ -20,7 +20,8 @@
       "lines-between-class-members": "error",
       "arrow-parens": "error",
       "semi": "error",
-      "no-useless-escape": "off"
+      "no-useless-escape": "off",
+      "react/prop-types": "off"
     },
     "parserOptions": {
       "sourceType": "module"
