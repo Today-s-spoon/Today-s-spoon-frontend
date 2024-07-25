@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import DefaultLayout from '../components/layout';
 import HomePage from '../pages/Home';
+import Record from '../pages/Record';
+import NotFound from '../pages/NotFound';
 
 const Router = () => {
 	return (
@@ -10,7 +12,8 @@ const Router = () => {
 			<Routes>
 				<Route element={<DefaultLayout />}>
 					<Route path="/" element={<HomePage />} />
-					<Route path="*" element={<div>Not Found</div>} />
+					<Route path="/Record" element={<Record />} />
+					<Route path="*" element={<NotFound />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
