@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-import DefaultLayout from '../components/layout';
 import HomePage from '../pages/Home';
+import Record from '../pages/Record';
+import DefaultLayout from '../components/layout';
 
 const Router = () => {
 	return (
@@ -10,7 +10,7 @@ const Router = () => {
 			<Routes>
 				<Route element={<DefaultLayout />}>
 					<Route path="/" element={<HomePage />} />
-					<Route path="*" element={<div>Not Found</div>} />
+					<Route path="/record" element={<Record />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
