@@ -1,0 +1,54 @@
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 100px;
+    background-color: #FFFFFF;
+    color: #000000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+
+.Header > div {
+    display: flex;
+    align-items: center;
+}
+
+.Header .logo_container {
+    width: 200px;
+    height: 200px;
+}
+
+.Header .logo_image {
+    display: inline-block;
+    /* margin-right: 500px; */
+    height: auto;
+    width: 100%; 
+}
+
+.Header .nav_container {
+    display: flex;
+    align-items: center;
+}
+
+.Header .login_button {
+    background-color: #F8F9F8;
+    color: #5F9D86;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 30px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Header .login_button:hover {
+    background-color: #f2f2f2;
+}
+
+.Header .nav_icon {
+    margin: 0 30px; 
+    font-size: 16px; 
+    cursor: pointer;
+}
