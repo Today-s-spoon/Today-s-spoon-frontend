@@ -1,6 +1,7 @@
 import './Header.css';
 import React from 'react';
 import icon_hackathon from '../assets/icon_hackathon.jpeg';
+import Button from '../components/Button.jsx';
 
 const Header = () => {
 	return (
@@ -12,7 +13,7 @@ const Header = () => {
 				<div className="nav_icon">오늘의 식사 기록</div>
 				<div className="nav_icon">식습관 분석</div>
 				<div className="nav_icon">오늘의 메뉴 추천</div>
-				<button className="login_button">로그인</button>
+				<Button text={'로그인'} type={'HEADERLOGIN'} />
 			</div>
 		</header>
 	);
