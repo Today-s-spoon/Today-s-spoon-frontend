@@ -2,8 +2,10 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import DefaultLayout from '../components/layout';
 import Home from '../pages/Home';
-import Record from '../pages/Record';
+import RecordStep1 from '../pages/record/RecordStep1';
+import RecordStep2 from '../pages/record/RecordStep2';
 import NotFound from '../pages/NotFound';
+import Analysis from '../pages/Analysis';
 
 const Router = () => {
 	return (
@@ -11,8 +13,10 @@ const Router = () => {
 			<Routes>
 				<Route element={<DefaultLayout />}>
 					<Route path="/" element={<Home />} />
-					<Route path="record" element={<Record />} />
+					<Route path="/record/step1" element={<RecordStep1 />} />
+					<Route path="/record/step2" element={<RecordStep2 />} />
 					<Route path="*" element={<NotFound />} />
+					<Route path="/analysis" element={<Analysis />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
