@@ -1,9 +1,12 @@
 import './Header.css';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import icon_hackathon from '../assets/icon_hackathon.jpeg';
 import Button from '../components/Button.jsx';
 
 const Header = () => {
+	const navigate = useNavigate();
+
 	return (
 		<header className="Header">
 			<div className="logo_container">
@@ -13,7 +16,7 @@ const Header = () => {
 				<div className="nav_icon">오늘의 식사 기록</div>
 				<div className="nav_icon">식습관 분석</div>
 				<div className="nav_icon">오늘의 메뉴 추천</div>
-				<Button text={'로그인'} type={'HEADERLOGIN'} />
+				<Button text={'로그인'} type={'HEADERLOGIN'} onClick={() => navigate('/login/step1')} />
 			</div>
 		</header>
 	);
