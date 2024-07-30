@@ -11,8 +11,8 @@ const RecordStep1 = () => {
 		<div className="Record">
 			<Header />
 			<div className="Record_content">
-				<div className="description">오늘의 숟가락 기록</div>
-				<div className="description_2">오늘 먹은 음식들을 기록해보세요</div>
+				<div className="record_description">오늘의 숟가락 기록</div>
+				<div className="record_description_2">오늘 먹은 음식들을 기록해보세요</div>
 				<Button text={'기록하기'} onClick={() => navigate('/record/step2')} />
 			</div>
 		</div>
