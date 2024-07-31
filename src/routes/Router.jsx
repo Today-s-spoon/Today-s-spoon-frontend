@@ -7,6 +7,7 @@ import RecordStep2 from '../pages/record/RecordStep2';
 import LoginStep1 from '../pages/login/LoginStep1';
 import LoginStep2 from '../pages/login/LoginStep2';
 import LoginStep3 from '../pages/login/LoginStep3';
+import RecommendStep1 from '../pages/recommend/RecommendStep1';
 import NotFound from '../pages/NotFound';
 import Analysis from '../pages/Analysis';
 
@@ -21,6 +22,7 @@ const Router = () => {
 					<Route path="/login/step1" element={<LoginStep1 />} />
 					<Route path="/login/step2" element={<LoginStep2 />} />
 					<Route path="/login/step3" element={<LoginStep3 />} />
+					<Route path="/recommend/step1" element={<RecommendStep1 />} />
 					<Route path="*" element={<NotFound />} />
 					<Route path="/analysis" element={<Analysis />} />
 				</Route>
