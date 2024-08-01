@@ -1,38 +1,55 @@
 .Header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 100px;
-    background-color: #FFFFFF;
-    color: #000000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 100px;
+	background-color: #ffffff;
+	color: #000000;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	height: 60px;
 }
 
 .Header > div {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .Header .logo_container {
-    width: 200px;
-    height: 200px;
+	width: 200px;
+	height: 200px;
 }
 
 .Header .logo_image {
-    display: inline-block;
-    /* margin-right: 500px; */
-    height: auto;
-    width: 100%; 
+	display: inline-block;
+	/* margin-right: 500px; */
+	height: auto;
+	width: 100%;
 }
 
 .Header .nav_container {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .Header .nav_icon {
-    margin: 0 30px; 
-    font-size: 16px; 
-    cursor: pointer;
+	margin: 0 30px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.Footer {
+	box-sizing: border-box;
+	padding: 15rem;
+	padding-top: 3rem;
+	width: 100%;
+	max-width: 1920px;
+}
+
+.Footer p {
+	text-align: left;
+	font-size: 15px;
+	color: #747474;
+}
+.Footer p:nth-child(1) {
+	font-size: 20px;
+	font-weight: 700;
 }
