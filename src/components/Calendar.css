@@ -1,0 +1,13 @@
+.calendar {
+  position: absolute;
+  width: 125px;
+  background: #fff;
+  border: 1px solid #eeeeee;
+  top: 18rem;
+  right: 10rem;
+  z-index: 999;
+}
+
+.calendar button {
+  color: black;
+}
