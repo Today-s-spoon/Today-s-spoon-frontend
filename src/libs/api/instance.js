@@ -44,7 +44,7 @@ axiosInstance.interceptors.response.use(
 		if (response) {
 			if (response.status === 401 || response.status === 403) {
 				alert('로그인이 되어 있지 않습니다. 로그인 후 시도해 주세요.');
-				window.location.href = '/login';
+				window.location.href = '/login/step1';
 			}
 		}
 		return Promise.reject(error);
