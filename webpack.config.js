@@ -1,5 +1,6 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
 
 export default {
 	mode: 'development',
@@ -20,6 +21,9 @@ export default {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './public/index.html',
+		}),
+		new webpack.ProvidePlugin({
+			process: 'process/browser.js',
 		}),
 	],
 	module: {
