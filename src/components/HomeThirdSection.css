@@ -1,0 +1,88 @@
+.third_section {
+    width: 100%;
+    max-width: 1920px;
+    height: 1500px;
+    background-color: #f8f9f8;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .third_section_title {
+    margin-top: 12rem;
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
+  
+  .third_section_title p {
+    margin: 0;
+    font-weight: 900;
+    font-size: 45px;
+  }
+  
+  .third_section_chart_wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6rem;
+  }
+  
+  .third_section_chart_wrapper div {
+    width: 40%;
+  }
+  
+  .third_section_chart_wrapper .box2 {
+    width: 40%;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .third_section_chart_wrapper .box2 .box2_title {
+    width: 100%;
+    position: relative;
+    top: 28px;
+  }
+  .third_section_chart_wrapper .box2 .box2_title p {
+    font-size: 30px;
+    color: black;
+    font-weight: 700;
+    text-align: left;
+  }
+  .third_section_chart_wrapper .box2 .box2_title span {
+    color: #43977d;
+  }
+  .third_section_chart_wrapper .box2 .img_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+  }
+  
+  .third_section_chart_wrapper .box2 .img_wrapper div {
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+  }
+  
+  .third_section_chart_wrapper .box2 .img_wrapper div p {
+    margin-top: 2rem;
+    font-size: 20px;
+  }
+  
+  .today_spoon_record_explain {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    justify-content: space-around;
+    text-align: left;
+  }
+  
+  .today_spoon_record_explain p {
+    margin: 0;
+    color: black;
+    font-size: 45px;
+    word-break: keep-all;
+  }
+  

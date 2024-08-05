@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import './RecordStep1.css';
 import Header from '../../components/Header.jsx';
 import Button from '../../components/Button.jsx';
-
 const RecordStep1 = () => {
 	const navigate = useNavigate();
 
