@@ -6,29 +6,44 @@ import Header from '../../components/Header';
 import Button from '../../components/Button';
 import axiosInstance from '../../libs/api/instance';
 import useTokenStore from '../../store/useTokenStore.js';
+import getUserId from '../../libs/api/getUserId'; // getUserId 함수 import
 
 const RecordStep2 = () => {
+	const [userId, setUserId] = useState(null); // userId 상태 추가
 	const [foodList, setFoodList] = useState([]);
 	const [selectedFood, setSelectedFood] = useState(null);
 	const [amount, setAmount] = useState(1);
 	const navigate = useNavigate();
 
-	const fetchFoodLists = async () => {
-		try {
-			const response = await axiosInstance.get('/api/foods');
+	useEffect(() => {
+		const fetchUserId = async () => {
+			const userId = await getUserId(); // userId 가져오기
+			setUserId(userId); // userId 상태 업데이트
+		};
 
-			if (Array.isArray(response.data)) {
-				const _foodList = [...response.data];
-				setFoodList(_foodList);
-				setSelectedFood(_foodList[0]);
-			} else {
-				throw new Error('Unexpected response format');
+		fetchUserId(); // 컴포넌트가 마운트될 때 userId 가져오기
+	}, []);
+
+	console.log(userId);
+
+	useEffect(() => {
+		const fetchFoodLists = async () => {
+			try {
+				const response = await axiosInstance.get('/api/foods');
+				if (Array.isArray(response.data)) {
+					const _foodList = [...response.data];
+					setFoodList(_foodList);
+					setSelectedFood(_foodList[0]);
+				} else {
+					throw new Error('Unexpected response format');
+				}
+			} catch (e) {
+				console.error('Error fetching food lists:', e.response ? e.response.data : e.message);
+				alert('데이터를 불러오는 중 오류가 발생했습니다.');
 			}
-		} catch (e) {
-			console.error('Error fetching food lists:', e.response ? e.response.data : e.message);
-			alert('데이터를 불러오는 중 오류가 발생했습니다.');
-		}
-	};
+		};
+		fetchFoodLists(); // 컴포넌트가 마운트될 때 음식 리스트 불러오기
+	}, []);
 
 	const fetchFoodDetail = async (foodId) => {
 		try {
@@ -50,13 +65,17 @@ const RecordStep2 = () => {
 	};
 
 	const handleRecordFood = async () => {
-		if (selectedFood) {
-			const userId = '사용자ID'; // 실제 사용자 ID로 대체 필요
+		if (selectedFood && userId) {
 			const foodId = selectedFood.foodID; // 선택한 음식의 ID
 			const amountToRecord = amount; // 선택한 양
 
 			try {
-				const response = await axiosInstance.post(`/api/${amountToRecord}/${userId}/${foodId}`);
+				// POST 요청을 Swagger 명세서에 맞게 수정
+				const response = await axiosInstance.post(`/api/${amountToRecord}/${userId}/${foodId}`, {
+					amount: amountToRecord, // 요청 본문에 amount 추가
+					userId: userId, // 요청 본문에 userId 추가
+					foodId: foodId, // 요청 본문에 foodId 추가
+				});
 				console.log('음식 기록 성공:', response.data);
 				alert('음식 기록이 성공적으로 저장되었습니다.');
 			} catch (e) {
@@ -64,15 +83,9 @@ const RecordStep2 = () => {
 				alert('음식 기록 중 오류가 발생했습니다.');
 			}
 		} else {
-			alert('음식을 선택해주세요.');
+			alert('음식을 선택하거나 사용자 ID를 불러오는 데 문제가 발생했습니다.');
 		}
 	};
-
-	useEffect(() => {
-		fetchFoodLists(); // 컴포넌트가 마운트될 때 음식 리스트 불러오기
-	}, []);
-
-	console.log(foodList);
 
 	return (
 		<div className="Record_2">
@@ -80,7 +93,6 @@ const RecordStep2 = () => {
 			<div className="Record_content2">
 				<div className="section1">
 					<div className="img_section">
-						{/* selectedFood가 정의되어 있고, imgUrl이 존재할 경우에만 해당 값을 사용 */}
 						<img
 							src={selectedFood && selectedFood.imgUrl ? selectedFood.imgUrl : UploadImage}
 							alt="업로드 이미지"
@@ -111,7 +123,7 @@ const RecordStep2 = () => {
 					</div>
 				</div>
 				<div className="section2">
-					<Button text={'분석 결과 보러가기'} onClick={() => navigate('/analysis')} />
+					<Button text={'분석 결과 보러가기'} onClick={() => navigate('/analysis/step1')} />
 				</div>
 			</div>
 		</div>
