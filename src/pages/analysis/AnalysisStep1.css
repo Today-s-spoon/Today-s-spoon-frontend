@@ -6,7 +6,7 @@ body {
     background-color: #ECF4F2;
 }
 
-.recommend_content {
+.recommend_content2 {
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -15,7 +15,7 @@ body {
     margin-top: 80px;
 }
 
-.description {
+.description2 {
     font-size: 30px;
     margin-top: 100px;
     margin-bottom: 10px;
@@ -23,40 +23,13 @@ body {
     font-weight: bold;
 }
 
-.white_section {
-    margin-top: 80px;
-    width: 85%;
-    height: 430px;
-    background-color: #FFFFFF;
-    padding: 100px;
-}
-
-.white_section_wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
-
-.white_section_des {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.white_section_des_1 {
-    color: #43977D;
-}
-
-.recommend_food_set {
+.analysis_food_set2 {
     display: inline-flex;
     flex-direction: column;
     gap: 5px;
 }
 
-.recommend_food_img {
+.analysis_food_img2 {
     height: 300px;
     margin-bottom: 50px;
     border-radius: 10px;
@@ -64,54 +37,54 @@ body {
         overflow: hidden;
     }
     
-    .recommend_food_img img {
+    .analysis_food_img2 img {
         display: inline-block;
         width: 100%;
         height: 100%;
         object-fit: cover;
 }
 
-.recommend_food_des {
+.analysis_food_des2 {
     align-items: center;
     justify-content: center;
     font-size: 20px;
     font-weight: bold;
 }
 
-.recommend_food_wrapper {
+.analysis_food_wrapper2 {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     gap: 50px;
 }
-.detail-food__section {
+.detail-food__section2 {
     display: flex;
     flex-direction: column;
     padding: 20px;
     gap: 10px;
 }
 
-.detail-food__title {
+.detail-food__title2 {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px 0;
 }
 
-.detail-food__title h2 {
+.detail-food__title2 h2 {
     font-size: 24px;
     font-weight: 600;
 }
 
-.detail-food__content {
+.detail-food__content2 {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10%;
 }
 
-.detail-food__image {
+.detail-food__image2 {
     max-width: 20%;
     display: flex;
     flex-direction: column;
@@ -120,7 +93,7 @@ body {
     padding: 20px;
 }
 
-.detail-food__image img {
+.detail-food__image2 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -129,7 +102,7 @@ body {
     border-radius: 10px;
 }
 
-.detail-food__dashboard {
+.detail-food__dashboard2 {
     display: inline-flex;
     flex-direction: column;
     justify-content: start;

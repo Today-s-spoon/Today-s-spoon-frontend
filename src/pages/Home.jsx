@@ -1,22 +1,23 @@
+// import React from 'react';
+// import './Home.css';
+// import Header from '../components/Header.jsx';
+// import Button from '../components/Button.jsx';
+// import useTokenStore from '../store/useTokenStore.js';
 import React from 'react';
-import './Home.css';
-import Header from '../components/Header.jsx';
-import Button from '../components/Button.jsx';
+import HomeFirstSection from '../components/HomeFirstSection';
+import HomeSecondSection from '../components/HomeSecondSection';
+import HomeThirdSection from '../components/HomeThirdSection';
+import HomeFourthSection from '../components/HomeFourthSection';
+import Header from '../components/Header';
 
 const Home = () => {
 	return (
 		<div className="Home">
 			<Header />
-			<div>홈 페이지 입니다.</div>
-			<Button text={'기록하러 가기'} />
-			<br />
-			<Button text={'로그인'} type={'HEADERLOGIN'} />
-			<br />
-			<Button text={'로그인'} type={'LOGIN'} />
-			<br />
-			<Button text={'회원가입'} type={'REGISTER'} />
-			<br />
-			<Button text={'날짜 선택'} type={'ROUND'} />
+			<HomeFirstSection />
+			<HomeSecondSection />
+			<HomeThirdSection />
+			<HomeFourthSection />
 		</div>
 	);
 };
