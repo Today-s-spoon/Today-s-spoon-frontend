@@ -2,57 +2,31 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './RecommendStep1.css';
+import getUserId from '../../libs/api/getUserId.js';
 import Header from '../../components/Header.jsx';
 import Dashboard from '../../components/Dashboard.jsx';
+import axiosInstance from '../../libs/api/instance.js';
 
 const RecommendStep1 = ({ userId }) => {
 	const navigate = useNavigate();
-	const [recommendedFoods, setRecommendedFoods] = useState([
-		{
-			foodID: 1,
-			foodName: 'samplefood',
-			imgUrl: 'https://s3.us-east-2.amazonaws.com/seony-bucket/1.jpg',
-			calorie: 250.5,
-			unitAmount: 100.0,
-			proteinAmount: 10.0,
-			fatAmount: 5.0,
-			carbohydrateAmount: 30.0,
-		},
-		{
-			foodID: 2,
-			foodName: 'samplefood',
-			imgUrl: 'https://s3.us-east-2.amazonaws.com/seony-bucket/1.jpg',
-			calorie: 250.5,
-			unitAmount: 100.0,
-			proteinAmount: 10.0,
-			fatAmount: 5.0,
-			carbohydrateAmount: 30.0,
-		},
-		{
-			foodID: 3,
-			foodName: 'samplefood',
-			imgUrl: 'https://s3.us-east-2.amazonaws.com/seony-bucket/1.jpg',
-			calorie: 250.5,
-			unitAmount: 100.0,
-			proteinAmount: 10.0,
-			fatAmount: 5.0,
-			carbohydrateAmount: 30.0,
-		},
-		{
-			foodID: 4,
-			foodName: 'samplefood',
-			imgUrl: 'https://s3.us-east-2.amazonaws.com/seony-bucket/1.jpg',
-			calorie: 250.5,
-			unitAmount: 100.0,
-			proteinAmount: 10.0,
-			fatAmount: 5.0,
-			carbohydrateAmount: 30.0,
-		},
-	]);
+	const [amountForUser, setAmountForUser] = useState({
+		fatAmount: 0,
+		carbohydrateAmount: 0,
+		proteinAmount: 0,
+		totalFatAmount: 0,
+		totalCarbohydrateAmount: 0,
+		totalProteinAmount: 0,
+	});
+	const [recommendedFoods, setRecommendedFoods] = useState([]);
+
 	useEffect(() => {
 		const fetchRecommendedFoods = async () => {
 			try {
-				const response = await axios.get(`/recommendation/${userId}/foods`);
+				const userId = await getUserId();
+				const userRecommendationInfo = await axiosInstance.get(`/api/recommendation/${userId}`);
+				setAmountForUser(userRecommendationInfo.data);
+
+				const response = await axiosInstance.get(`/api/recommendation/${userId}/foods`);
 				setRecommendedFoods(response.data);
 			} catch (error) {
 				console.error('음식 목록을 불러오는 중 오류 발생:', error);
@@ -72,7 +46,14 @@ const RecommendStep1 = ({ userId }) => {
 						<div className="dashboard_des_2">님 이만큼 더 채워야해요!</div>
 					</div>
 				</div>
-				<Dashboard />
+				<Dashboard
+					proteinAmount={amountForUser.totalProteinAmount - amountForUser.proteinAmount}
+					totalProteinAmount={amountForUser.totalProteinAmount}
+					fatAmount={amountForUser.totalFatAmount - amountForUser.fatAmount}
+					totalFatAmount={amountForUser.totalFatAmount}
+					carbohydrateAmount={amountForUser.totalCarbohydrateAmount - amountForUser.carbohydrateAmount}
+					totalCarbohydrateAmount={amountForUser.totalCarbohydrateAmount}
+				/>
 
 				<div className="white_section">
 					<div className="white_section_wrapper">
@@ -107,11 +88,11 @@ const RecommendStep1 = ({ userId }) => {
 								<div className="detail-food__dashboard">
 									<Dashboard
 										proteinAmount={food.proteinAmount}
-										totalProteinAmount={100}
+										totalProteinAmount={amountForUser.totalProteinAmount}
 										fatAmount={food.fatAmount}
-										totalFatAmount={200}
+										totalFatAmount={amountForUser.totalFatAmount}
 										carbohydrateAmount={food.carbohydrateAmount}
-										totalCarbohydrateAmount={200}
+										totalCarbohydrateAmount={amountForUser.totalCarbohydrateAmount}
 									/>
 								</div>
 							</div>
