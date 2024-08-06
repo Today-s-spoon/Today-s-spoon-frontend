@@ -1,0 +1,84 @@
+.My_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ecf4f2;
+    padding-top: 50px;
+    width: 100vw;
+ }
+ 
+ .user_Icon img {
+    width: 300px; /* 너비를 80px로 줄임 */
+    height: 300px; /* 높이를 80px로 줄임 */
+    border-radius: 50%;
+ }
+ .user_name {
+    font-weight: bold;
+    color: black;
+    font-size: 30px;
+ }
+ .revise_btn a {
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+ }
+ .revise_btn {
+    margin-top: 20px;
+    background-color: #43977d;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-left: 100px;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .log_btn {
+    margin-top: 20px;
+    background-color: #fcfcfc;
+    padding-left: 126px;
+    padding-right: 126px;
+    border-radius: 10px;
+    padding-bottom: 18px;
+    padding-top: 18px;
+    text-align: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #43977d;
+ }
+ .log_btn a {
+    color: #43977d;
+    font-size: 20px;
+    font-weight: 800;
+ }
+ .h_btn {
+    margin-top: 20px;
+    background-color: #fcfcfc;
+    padding-left: 135px;
+    padding-right: 135px;
+    border-radius: 10px;
+    padding-bottom: 18px;
+    padding-top: 18px;
+    text-align: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #43977d;
+    margin-bottom: 150px;
+ }
+ .h_btn a {
+    color: #43977d;
+    font-size: 20px;
+    font-weight: 800;
+ }
+ .a {
+    text-decoration: none; /* 모든 링크에 대해 밑줄 제거 */
+ }
+ 

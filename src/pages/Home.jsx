@@ -8,11 +8,12 @@ import HomeFirstSection from '../components/HomeFirstSection';
 import HomeSecondSection from '../components/HomeSecondSection';
 import HomeThirdSection from '../components/HomeThirdSection';
 import HomeFourthSection from '../components/HomeFourthSection';
+import Header from '../components/Header';
 
 const Home = () => {
 	return (
 		<div className="Home">
-			{/* <Header /> */}
+			<Header />
 			<HomeFirstSection />
 			<HomeSecondSection />
 			<HomeThirdSection />

@@ -36,6 +36,8 @@ const RecommendStep1 = ({ userId }) => {
 		fetchRecommendedFoods();
 	}, [userId]);
 
+	console.log(userId);
+
 	return (
 		<div className="Recommend">
 			<Header />

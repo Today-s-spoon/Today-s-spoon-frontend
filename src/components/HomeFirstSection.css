@@ -8,8 +8,8 @@
   .section_wrapper {
     display: flex;
     flex-direction: column;
-    margin-top: 5rem;
-    margin-left: 25rem;
+    margin-top: 2rem;
+    margin-left: 15rem;
   }
   
   .main_text {
@@ -43,5 +43,8 @@
   }
   .main_btn:hover {
     background-color: #3b816b;
+  }
+  a {
+    text-decoration: none;
   }
   

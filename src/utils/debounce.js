@@ -1,4 +1,4 @@
-function debounce(callback, timeout = 250) {
+function debounce(callback, timeout = 60000) {
 	let timeoutId;
 
 	return (params) => {
